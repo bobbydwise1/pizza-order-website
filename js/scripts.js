@@ -1,45 +1,57 @@
-//Bussiness Logic
+//Bussiness Logic for creating a list of the user's pizzas
+function UserPizzasArray() {
+  this.pizzas = [],
+  this.id = -1
+} //initializes the user's list of pizzaSize
+
+UserPizzasArray.prototype.addNewPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzas.push(pizza);
+}
+
+UserPizzasArray.prototype.assignId = function() {
+  this.id += 1;
+  return this.id;
+} //Note every pizza object in here should have an id property.
+
+//Bussiness Logic for individual pizza objects
+
 function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
   this.pizzaSize = pizzaSize,
   this.pizzaToppings = pizzaToppings
 }
 
-PizzaConstructor.prototype.PizzaPriceFinal = function(pizzaObject, pizzaPropertyArray, ojectArrayString, objectArrayPrice) {
+PizzaConstructor.prototype.PizzaPriceFinal = function(pizzaObject, pizzaSizePriceObjectArray, pizzaToppingsPriceObjectArray) {
   var tempFinalPrice = 0;
-  pizzaObject.forEach()
+
 }
 
-function PriceConstructor(singleItem, price, id) {
+function PriceConstructor(singleItem, price) {
   this.singleItem = singleItem,
   this.price = price,
-  this.id = id
-}
-
-function priceSummer(stringToSearch,priceArray) {
-  var tempPrice = priceArray.singleItem.search(stringToSearch);
+  this.id = 0
 }
 
 //The below function creates the price array with an index
 function priceArrayCreate(arrayOfStringItems, arrayOfPrices) {
 var tempObjectPairs = [];
   for (i = 0; i < arrayOfStringItems.length; i++) {
-    var tempObjectPair = new PriceConstructor(arrayOfStringItems[i],arrayOfPrices[i], i);
+    var tempObjectPair = new PriceConstructor(arrayOfStringItems[i],arrayOfPrices[i]);
+    tempObjectPair.id = i;  //a better way to assign a unique ID when your starting data is fixed
     tempObjectPairs.push(tempObjectPair);
   }
   return tempObjectPairs;
 }
 
-function insertIndexToAnArrayOfObjects(arrayOfObjects) {
-  for (i = 0; i < arrayOfObjects.length; i++) {
-    arrayOfObjects[i].push(i);
-  }
-  return arrayOfObjects;
-}
-
+//Test Database
 var userPizza1 = new PizzaConstructor("small", ["onions", "pineapples"]);
-var userPizza2 = new PizzaConstructor("small", ["pineapples"]);
-var userPizzasArray = [userPizza1,userPizza2];
-console.log(userPizzasArray);
+var userPizza2 = new PizzaConstructor("medium", ["pineapples"]);
+var userPizza3 = new PizzaConstructor("large", ["sasuage", "bacon", "pepperoni"])
+var usersNewListofPizzas = new UserPizzasArray();
+usersNewListofPizzas.addNewPizza(userPizza1);
+usersNewListofPizzas.addNewPizza(userPizza2);
+usersNewListofPizzas.addNewPizza(userPizza3);
+console.log(usersNewListofPizzas);
 
 var pizzaAvalibleSizes = ["small", "medium", "large"];
 var pizzaAvalibleSizesPrices = [10, 20, 30];
