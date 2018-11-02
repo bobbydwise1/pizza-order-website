@@ -19,14 +19,15 @@ function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
 }
 
 //Logic for determining the intial price of a single pizza object
-PizzaConstructor.prototype.PizzaPriceFinal = function(objectArrayOfSizePrices, objectArrayOfSizePrices) {
+PizzaConstructor.prototype.PizzaPriceFinal = function(pizzaSizePriceObjectArray, pizzaToppingsPriceObjectArray) {
   var tempFinalPrice = 0;
   var tempSize = this.pizzaSize;
   var tempToppings = this.pizzaToppings;
   console.log(tempFinalPrice, tempSize, tempToppings);
-  // for (i = 0; i < objectArrayOfSizePrices.length; i++) {
-  //   if objectArrayOfSizePrices.
-  // }
+  for (i = 0; i < Object.keys(pizzaSizePriceObjectArray).length; i++)
+  if (tempSize === pizzaSizePriceObjectArray.) {
+    return
+  }
 
 }
 
@@ -44,6 +45,13 @@ pricesArray.prototype.assignId = function() {
   this.id += 1;
   return this.id;
 }
+pricesArray.prototype.findAPriceForThis = function (someString) {
+  console.log(this.length);
+  for (i = 0; i < this.length; i++) {
+
+  }
+}
+
 //Logic for the price constructor
 function PriceConstructor(thingToBuy, price) {
   this.thingToBuy = thingToBuy,
