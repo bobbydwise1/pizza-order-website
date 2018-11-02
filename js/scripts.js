@@ -21,9 +21,29 @@ function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
   this.pizzaToppings = pizzaToppings
 }
 
-PizzaConstructor.prototype.PizzaPriceFinal = function(pizzaObject, pizzaSizePriceObjectArray, pizzaToppingsPriceObjectArray) {
-  var tempFinalPrice = 0;
+PizzaConstructor.prototype.PizzaPriceFinal = function() {
+  var tempFinalPrice = this.price;
+  var tempSize = this.pizzaSize;
+  console.log(tempFinalPrice, tempSize);
 
+}
+
+//Logic for prices
+
+function pricesArray() {
+  this.singleItem = [],
+  this.price = [],
+  this.id = -1
+}
+
+pricesArray.prototype.addNewPrice = function(price) {
+  price.id = this.assignId();
+  this.price.push(price);
+}
+
+pricesArray.prototype.assignId = function() {
+  this.id += 1;
+  return this.id;
 }
 
 function PriceConstructor(singleItem, price) {
@@ -34,16 +54,16 @@ function PriceConstructor(singleItem, price) {
 
 //The below function creates the price array with an index
 function priceArrayCreate(arrayOfStringItems, arrayOfPrices) {
-var tempObjectPairs = [];
+var tempObjectPairs = new pricesArray();
+//console.log(tempObjectPairs);
   for (i = 0; i < arrayOfStringItems.length; i++) {
     var tempObjectPair = new PriceConstructor(arrayOfStringItems[i],arrayOfPrices[i]);
-    tempObjectPair.id = i;  //a better way to assign a unique ID when your starting data is fixed
-    tempObjectPairs.push(tempObjectPair);
+    tempObjectPairs.addNewPrice(tempObjectPair);
   }
   return tempObjectPairs;
 }
 
-//Test Database
+//Test Database of user's pizzas
 var userPizza1 = new PizzaConstructor("small", ["onions", "pineapples"]);
 var userPizza2 = new PizzaConstructor("medium", ["pineapples"]);
 var userPizza3 = new PizzaConstructor("large", ["sasuage", "bacon", "pepperoni"])
@@ -52,13 +72,13 @@ usersNewListofPizzas.addNewPizza(userPizza1);
 usersNewListofPizzas.addNewPizza(userPizza2);
 usersNewListofPizzas.addNewPizza(userPizza3);
 console.log(usersNewListofPizzas);
-
+//Test Database of pizza size prices
 var pizzaAvalibleSizes = ["small", "medium", "large"];
 var pizzaAvalibleSizesPrices = [10, 20, 30];
 var pizzaSizePriceObjectArray = priceArrayCreate(pizzaAvalibleSizes, pizzaAvalibleSizesPrices);
 console.log(pizzaSizePriceObjectArray);
-
-var pizzaAvalibleToppings = ["pineapples", "onions", "sasuage", "bacon", "pepperoni"];
+//Test Database of pizza toppings prices
+var pizzaAvalibleToppings = ["pineapples", "onions", "sasauge", "bacon", "pepperoni"];
 var pizzaAvalibleToppingsPrices = [1,2,3,4,5];
 var pizzaToppingsPriceObjectArray = priceArrayCreate(pizzaAvalibleToppings, pizzaAvalibleToppingsPrices);
 console.log(pizzaToppingsPriceObjectArray);
