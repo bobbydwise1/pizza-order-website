@@ -20,38 +20,12 @@ _HTML, CSS, Bootstrap, JavaScript, jQuery, Git._
 
 ## Specifications
 
-* Note, the website does not have user registration.
-* Have a form that asks the user for their full name, address, and phone number, with a "Submit" button.
-* Then display a form that shows the following options to the user:  A radio select for a pizza size, and a checkbox list for various pizza toppings.
+* Display a form that shows the following options to the user:  A radio select for a pizza size, and a checkbox list for various pizza toppings.  There is also a "checkout" button.
 
-* The user's pizza is created using a pizza JavaScript object.  We note that the pizza JavaScript object has at least the following properties: size, toppings, and price.
+* The user's pizza is created using a pizza JavaScript object.  We note that the pizza JavaScript object has at least the following properties: size & toppings.
 
-  * Input = User selects a pizza size from a radio list.  (Medium, Large, Family sizes.)
-  * Output = graphic of a pizza pie of the relative sizes.  Note this graphic output should update immediately upon user selection.
-
-  * Input = User is able to select pizza toppings via a "checkbox".
-  * Output = graphics of the topping is overlayed on the pizza pie graphic immediately.
-
-  * Input = If a topping is already selected, the user unchecks the box to unselect it.
-  * Output = graphics of the topping is removed from the pizza pie graphic immediately.
-
-  * Input = When ever the user changes pizza size or topping.
-  * Output = There is a price adjustment shown on the side bar
-
-* When the user is satisfied with their order, a unique pizza object is created.  There is a "Checkout" button to proceed to payment and ordering.
-  * Input = User selects the "Checkout" button.
-  * Output = User is shown a new "Checkout" screen.
-
-* On the Checkout Screen, the user has the ability to review the pizza they ordered and the price.  There is then a confirm button and a cancel button.
-  * Input = User picks the confirm button.
-  * Output = User is shown "Your pizza is order has been confirmed".
-
-  * Input = User picks the cancel button.
-  * Output = User is asked "Are you sure?"  With a YES or NO option.
-
-* (OPTIONAL) Allow the user to create more than 1 pizza, and properly sum the total price.
-
-* (OPTIONAL) Create a receipt graphic.
+  * Input = User selects a pizza size from a radio list.  User is able to select pizza toppings via a "checkbox".  User then hits the "checkout" button.
+  * Output = At the bottom of the screen, the user is shown a price of their pizza.  Note this output must be done using an object prototype method.
 
 ### License
 
