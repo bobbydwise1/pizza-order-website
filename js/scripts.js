@@ -3,58 +3,57 @@ function UserPizzasArray() {
   this.pizzas = [],
   this.id = -1
 } //initializes the user's list of pizzaSize
-
 UserPizzasArray.prototype.addNewPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas.push(pizza);
 }
-
 UserPizzasArray.prototype.assignId = function() {
   this.id += 1;
   return this.id;
 } //Note every pizza object in here should have an id property.
 
 //Bussiness Logic for individual pizza objects
-
 function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
   this.pizzaSize = pizzaSize,
   this.pizzaToppings = pizzaToppings
 }
 
-PizzaConstructor.prototype.PizzaPriceFinal = function() {
-  var tempFinalPrice = this.price;
+//Logic for determining the intial price of a single pizza object
+PizzaConstructor.prototype.PizzaPriceFinal = function(objectArrayOfSizePrices, objectArrayOfSizePrices) {
+  var tempFinalPrice = 0;
   var tempSize = this.pizzaSize;
-  console.log(tempFinalPrice, tempSize);
+  var tempToppings = this.pizzaToppings;
+  console.log(tempFinalPrice, tempSize, tempToppings);
+  // for (i = 0; i < objectArrayOfSizePrices.length; i++) {
+  //   if objectArrayOfSizePrices.
+  // }
 
 }
 
-//Logic for prices
-
+//Logic for creating an empty prices object
 function pricesArray() {
-  this.singleItem = [],
-  this.price = [],
+  this.priceListing = [],
   this.id = -1
 }
-
-pricesArray.prototype.addNewPrice = function(price) {
-  price.id = this.assignId();
-  this.price.push(price);
+//Logic for creating methods for the pricesArray object
+pricesArray.prototype.addNewPrice = function(priceListing) {
+  priceListing.id = this.assignId();
+  this.priceListing.push(priceListing);
 }
-
 pricesArray.prototype.assignId = function() {
   this.id += 1;
   return this.id;
 }
-
-function PriceConstructor(singleItem, price) {
-  this.singleItem = singleItem,
+//Logic for the price constructor
+function PriceConstructor(thingToBuy, price) {
+  this.thingToBuy = thingToBuy,
   this.price = price,
   this.id = 0
 }
 
 //The below function creates the price array with an index
 function priceArrayCreate(arrayOfStringItems, arrayOfPrices) {
-var tempObjectPairs = new pricesArray();
+  var tempObjectPairs = new pricesArray();
 //console.log(tempObjectPairs);
   for (i = 0; i < arrayOfStringItems.length; i++) {
     var tempObjectPair = new PriceConstructor(arrayOfStringItems[i],arrayOfPrices[i]);
