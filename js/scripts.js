@@ -49,17 +49,17 @@ PizzaConstructor.prototype.pizzaPriceFinal = function() {
 
 }
 //Test Database of user's pizzas
-var pizza1 = new PizzaConstructor("small", ["onions", "pineapples"]);
-var pizza2 = new PizzaConstructor("medium", ["pineapples"]);
-var pizza3 = new PizzaConstructor("large", ["sausage", "bacon", "pepperoni", "pineapples", "onions"])
-var pizzas = new UserPizzasArray();
-pizzas.addNewPizza(pizza1);
-pizzas.addNewPizza(pizza2);
-pizzas.addNewPizza(pizza3);
-console.log(pizzas);
-console.log("1st pizza costs: " + pizza1.pizzaPriceFinal());
-console.log("2nd pizza costs: " + pizza2.pizzaPriceFinal());
-console.log("3rd pizza costs: " + pizza3.pizzaPriceFinal());
+// var pizza1 = new PizzaConstructor("small", ["onions", "pineapples"]);
+// var pizza2 = new PizzaConstructor("medium", ["pineapples"]);
+// var pizza3 = new PizzaConstructor("large", ["sausage", "bacon", "pepperoni", "pineapples", "onions"])
+// var pizzas = new UserPizzasArray();
+// pizzas.addNewPizza(pizza1);
+// pizzas.addNewPizza(pizza2);
+// pizzas.addNewPizza(pizza3);
+// console.log(pizzas);
+// console.log("1st pizza costs: " + pizza1.pizzaPriceFinal());
+// console.log("2nd pizza costs: " + pizza2.pizzaPriceFinal());
+// console.log("3rd pizza costs: " + pizza3.pizzaPriceFinal());
 
 
 
@@ -67,16 +67,20 @@ console.log("3rd pizza costs: " + pizza3.pizzaPriceFinal());
 
 
 
-
-
+var pizzasOfTheUser = new UserPizzasArray();
 //UI Logic
 $(document).ready(function() {
   $("form#checkbox-pizza-toppings").submit(function(event){
       event.preventDefault();
-      $("input:checkbox[name=checkbox-pizza-toppings]:checked").each(function(){
-        var choosenToppings = $(this).val();
-        console.log(choosenToppings);
+      var size = $("input:radio[name=input-size]:checked").val();
+      var choosenToppings = [];
+      $("input:checkbox[name=checkbox-pizza-toppings]:checked").each(function() {
+        choosenToppings.push($(this).val());
       });
-
+      console.log(size, choosenToppings);
+      pizzaUser = new PizzaConstructor(size, choosenToppings);
+      console.log(pizzaUser);
+      pizzasOfTheUser.addNewPizza(pizzaUser);
+      $("span#outputPrice").html(pizzasOfTheUser.pizzas[0].pizzaPriceFinal());
   });
 });

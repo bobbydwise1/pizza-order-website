@@ -14,33 +14,31 @@
       <h1>Pizza Ordering Webiste</h1>
       <h3>Select the pizza size:<h3>
       <div class="radio">
-        <label>
-          <input type="radio" name="small" value="small" checked>Small</label>
+        <label><input type="radio" name="input-size" value="small" checked>$10: Small</label>
       </div>
       <div class="radio">
-        <label>
-          <input type="radio" name="medium" value="medium">Medium</label>
+        <label><input type="radio" name="input-size" value="medium">$20: Medium</label>
       </div>
       <div class="radio">
-        <label>
-          <input type="radio" name="large" value="large">Cookies & Cream</label>
+        <label><input type="radio" name="input-size" value="large">$30: Large</label>
       </div>
 
       <div class="container">
         <form id="checkbox-pizza-toppings">
           <div class="form-group">
             <h3>Select the toppings:</h3>
-            <input type="checkbox" name="checkbox-pizza-toppings" value="sausage">Sausage<br>
-            <input type="checkbox" name="checkbox-pizza-toppings" value="bacon">Bacon<br>
-            <input type="checkbox" name="checkbox-pizza-toppings" value="pepperoni">Pepperoni<br>
-            <input type="checkbox" name="checkbox-pizza-toppings" value="pineapples">Pineapples<br>
-            <input type="checkbox" name="checkbox-pizza-toppings" value="onions">Onions<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="sausage">$5: Sausage<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="bacon">$4: Bacon<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="pepperoni">$3: Pepperoni<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="pineapples">$2: Pineapples<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="onions">$1: Onions<br>
           </div>
           <button type="submit">Checkout!</button>
         </form>
       </div>
-
-
+      <div class="container">
+        <p>Your pizza costs: <span id="outputPrice">????</span></p>
+      </div>
     </div>  <!-- This is the body END -->
   </body>
 </html>
