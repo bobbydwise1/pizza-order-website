@@ -10,7 +10,37 @@
   </head>
   <body>
     <div class="container">  <!-- This is the body START -->
+
       <h1>Pizza Ordering Webiste</h1>
+      <h3>Select the pizza size:<h3>
+      <div class="radio">
+        <label>
+          <input type="radio" name="small" value="small" checked>Small</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="medium" value="medium">Medium</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="large" value="large">Cookies & Cream</label>
+      </div>
+
+      <div class="container">
+        <form id="checkbox-pizza-toppings">
+          <div class="form-group">
+            <h3>Select the toppings:</h3>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="sausage">Sausage<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="bacon">Bacon<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="pepperoni">Pepperoni<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="pineapples">Pineapples<br>
+            <input type="checkbox" name="checkbox-pizza-toppings" value="onions">Onions<br>
+          </div>
+          <button type="submit">Checkout!</button>
+        </form>
+      </div>
+
+
     </div>  <!-- This is the body END -->
   </body>
 </html>

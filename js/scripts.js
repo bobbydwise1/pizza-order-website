@@ -13,7 +13,7 @@ UserPizzasArray.prototype.assignId = function() {
 } //Note every pizza object in here should have an id property.
 
 //Bussiness Logic for individual pizza objects
-function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
+function PizzaConstructor(pizzaSize, pizzaToppings) {
   this.pizzaSize = pizzaSize,
   this.pizzaToppings = pizzaToppings
 }
@@ -28,7 +28,6 @@ PizzaConstructor.prototype.pizzaPriceFinal = function() {
   } else if (this.pizzaSize === "large") {
     tempFinalPrice += 30;
   } else {}
-  console.log("Pan Price price: " + tempFinalPrice);
   for (i = 0; i < this.pizzaToppings.length; i++) {
     if (this.pizzaToppings[i] === "sausage") {
       tempFinalPrice += 5;
@@ -46,9 +45,7 @@ PizzaConstructor.prototype.pizzaPriceFinal = function() {
       tempFinalPrice += 1;
     }
   }
-
-    console.log("final pizza price: " + tempFinalPrice);
-    return tempFinalPrice;
+  return tempFinalPrice;
 
 }
 //Test Database of user's pizzas
@@ -74,5 +71,12 @@ console.log("3rd pizza costs: " + pizza3.pizzaPriceFinal());
 
 //UI Logic
 $(document).ready(function() {
+  $("form#checkbox-pizza-toppings").submit(function(event){
+      event.preventDefault();
+      $("input:checkbox[name=checkbox-pizza-toppings]:checked").each(function(){
+        var choosenToppings = $(this).val();
+        console.log(choosenToppings);
+      });
 
+  });
 });
