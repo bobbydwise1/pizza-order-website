@@ -11,19 +11,24 @@
   <body>
     <div class="container">  <!-- This is the body START -->
 
-      <h1>Pizza Ordering Webiste</h1>
-      <h3>Select the pizza size:<h3>
-      <div class="radio">
-        <label><input type="radio" name="input-size" value="small" checked>$10: Small</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="input-size" value="medium">$20: Medium</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="input-size" value="large">$30: Large</label>
-      </div>
+      <div class="container well main-header">  <!-- This is the header START -->
+        <h1>Pizza Ordering Webiste</h1>
+      </div>  <!-- This is the header END -->
 
-      <div class="container">
+      <div class="container well">  <!-- This is the radio START -->
+      <h3>Select the pizza size:<h3>
+        <div class="radio">
+          <label><input type="radio" name="input-size" value="small" checked>$10: Small</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="input-size" value="medium">$20: Medium</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="input-size" value="large">$30: Large</label>
+        </div>
+      </div>  <!-- This is the radio END -->
+
+      <div class="container well">  <!-- This is the checkbox START -->
         <form id="checkbox-pizza-toppings">
           <div class="form-group">
             <h3>Select the toppings:</h3>
@@ -33,12 +38,14 @@
             <input type="checkbox" name="checkbox-pizza-toppings" value="pineapples">$2: Pineapples<br>
             <input type="checkbox" name="checkbox-pizza-toppings" value="onions">$1: Onions<br>
           </div>
-          <button type="submit">Checkout!</button>
+          <button class="btn btn-default btn-success" type="submit">Checkout!</button>
         </form>
-      </div>
-      <div class="container">
-        <p>Your pizza costs: <span id="outputPrice">????</span></p>
-      </div>
+      </div>  <!-- This is the checkbox END -->
+
+      <div class="container well output-end">  <!-- This is the output price START -->
+        <p>Your pizza costs: <span id="outputPrice">?</span></p>
+      </div>  <!-- This is the output price END -->
+
     </div>  <!-- This is the body END -->
   </body>
 </html>

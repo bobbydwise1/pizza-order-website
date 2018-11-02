@@ -1,8 +1,8 @@
-//Bussiness Logic for creating a list of the user's pizzas - use this to make an ordering queue
+//Bussiness Logic for creating a history object of user's pizzas.  Not used on this version.
 function UserPizzasArray() {
   this.pizzas = [],
   this.id = 0
-} //initializes the user's list of pizzaSize
+}
 UserPizzasArray.prototype.addNewPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas.push(pizza);
@@ -10,7 +10,7 @@ UserPizzasArray.prototype.addNewPizza = function(pizza) {
 UserPizzasArray.prototype.assignId = function() {
   this.id += 1;
   return this.id;
-} //Note every pizza object in here should have an id property.
+}
 
 //Bussiness Logic for individual pizza objects
 function PizzaConstructor(pizzaSize, pizzaToppings) {
@@ -60,9 +60,9 @@ $(document).ready(function() {
         choosenToppings.push($(this).val());
       });
       pizzaUser = new PizzaConstructor(size, choosenToppings);
-      pizzasOfTheUser.addNewPizza(pizzaUser);  //This is an ongoing history of the pizzas
+      pizzasOfTheUser.addNewPizza(pizzaUser);  //This is an ongoing history of the pizzas - Not used
       $("span#outputPrice").html(pizzaUser.pizzaPriceFinal());
-      console.log(pizzaUser);
-      console.log(pizzasOfTheUser);
+      // console.log(pizzaUser);
+      // console.log(pizzasOfTheUser);
   });
 });
