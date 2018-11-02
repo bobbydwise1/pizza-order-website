@@ -19,7 +19,7 @@ function PizzaConstructor(pizzaSize, pizzaToppings, pizzaPriceFinal) {
 }
 
 //Logic for determining the intial price of a single pizza object
-PizzaConstructor.prototype.PizzaPriceFinal = function() {
+PizzaConstructor.prototype.pizzaPriceFinal = function() {
   var tempFinalPrice = 0;
   if (this.pizzaSize === "small") {
     tempFinalPrice += 10;
@@ -32,18 +32,24 @@ PizzaConstructor.prototype.PizzaPriceFinal = function() {
   for (i = 0; i < this.pizzaToppings.length; i++) {
     if (this.pizzaToppings[i] === "sausage") {
       tempFinalPrice += 5;
-    } else if (this.pizzaToppings[i] === "bacon") {
+    }
+    if (this.pizzaToppings[i] === "bacon") {
       tempFinalPrice += 4;
-    } else if (this.pizzaToppings[i] === "pepperoni") {
+    }
+    if (this.pizzaToppings[i] === "pepperoni") {
       tempFinalPrice += 3;
-    } else if (this.pizzaToppings[i] === "pineapples") {
+    }
+    if (this.pizzaToppings[i] === "pineapples") {
       tempFinalPrice += 2;
-    } else if (this.pizzaToppings[i] === "onions") {
+    }
+    if (this.pizzaToppings[i] === "onions") {
       tempFinalPrice += 1;
-    } else {}
-    console.log("Pan Price price: " + tempFinalPrice);
-    return tempFinalPrice;
+    }
   }
+
+    console.log("final pizza price: " + tempFinalPrice);
+    return tempFinalPrice;
+
 }
 //Test Database of user's pizzas
 var pizza1 = new PizzaConstructor("small", ["onions", "pineapples"]);
@@ -54,7 +60,9 @@ pizzas.addNewPizza(pizza1);
 pizzas.addNewPizza(pizza2);
 pizzas.addNewPizza(pizza3);
 console.log(pizzas);
-
+console.log("1st pizza costs: " + pizza1.pizzaPriceFinal());
+console.log("2nd pizza costs: " + pizza2.pizzaPriceFinal());
+console.log("3rd pizza costs: " + pizza3.pizzaPriceFinal());
 
 
 
